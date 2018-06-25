@@ -24,7 +24,7 @@ class ServiceProvider extends LaravelProvider
 
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/shortcuts.php', 'shortcuts');
+        $this->mergeConfigFrom(__DIR__.'/../config/shortcuts.php', 'shortcuts');
     }
 
     protected function commandClosure(array $definition): Closure
