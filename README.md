@@ -111,9 +111,9 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/artisan-shortcuts.svg?style=flat-square
 [ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/artisan-shortcuts.svg?style=flat-square
-[ico-styleci]: https://styleci.io/repos/:styleci/shield
+[ico-styleci]: https://styleci.io/repos/138423783/shield
 
 [link-packagist]: https://packagist.org/packages/sven/artisan-shortcuts
 [link-downloads]: https://packagist.org/packages/sven/artisan-shortcuts
 [link-circleci]: https://circleci.com/gh/svenluijten/artisan-shortcuts
-[link-styleci]: https://styleci.io/repos/:styleci
+[link-styleci]: https://styleci.io/repos/138423783
