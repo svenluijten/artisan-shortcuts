@@ -57,7 +57,8 @@ $ php artisan vendor:publish
 ```
 
 ## Usage
-Defining your own artisan shortcuts is fairly straight forward. Take a look at the following
+After publishing the configuration file, you can define your shortcuts in `config/shortcuts.php`. After
+that, creating your own artisan shortcuts is fairly straight forward. Take a look at the following
 configuration:
 
 ```php
