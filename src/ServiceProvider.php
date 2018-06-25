@@ -3,6 +3,7 @@
 namespace Sven\ArtisanShortcuts;
 
 use Closure;
+use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\ServiceProvider as LaravelProvider;
 
 class ServiceProvider extends LaravelProvider
@@ -16,7 +17,7 @@ class ServiceProvider extends LaravelProvider
         $shortcuts = collect(config('shortcuts', []));
 
         $shortcuts->each(function (array $definition, string $shortcut) {
-            $this->app->get('artisan')->command(
+            $this->app->get(Kernel::class)->command(
                 $shortcut, $this->commandClosure($definition)
             );
         });
