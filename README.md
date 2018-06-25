@@ -19,6 +19,7 @@ names (or long, convoluted ones, that's up to you!).
   - [Registering the service provider](#registering-the-service-provider)
   - [Publishing the configuration file](#publishing-the-configuration-file)
 - [Usage](#usage)
+- [Supported versions](#supported-versions)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -98,6 +99,15 @@ return [
     ],
 ];
 ```
+
+## Supported versions
+Look at the table below to find out what versions of Laravel are supported on what version
+of this package:
+
+
+| Laravel          | Artisan Shortcuts   |
+|------------------|---------------------|
+| `5.5.*`, `5.6.*` | `^1.0`              |
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
