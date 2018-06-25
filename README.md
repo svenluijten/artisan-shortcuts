@@ -1,4 +1,4 @@
-![artisan-shortcuts](:hero)
+![artisan-shortcuts](https://user-images.githubusercontent.com/11269635/41874111-3489070c-78c7-11e8-920a-de918c4a0cc4.jpg)
 
 # Laravel Artisan Shortcuts
 
