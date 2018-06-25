@@ -1,7 +1,5 @@
 preset: laravel
 
-linting: true
-
 risky: false
 
 enabled:
@@ -10,4 +8,3 @@ enabled:
 
 disabled:
   - length_ordered_imports
-  
