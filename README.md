@@ -74,7 +74,7 @@ return [
 Running `php artisan custom-command` will execute `FirstCommand` with the option `--option=value`,
 and `SecondCommand` without any arguments or options.
 
-Something I use this for all the time is [Barry van den Heuvel's `laravel-ide` commands]:
+Something I use this for all the time is [Barry van den Heuvel's `laravel-ide-helper` commands](https://github.com/barryvdh/laravel-ide-helper):
 
 ```php
 return [
