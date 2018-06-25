@@ -37,7 +37,7 @@ class ServiceProvider extends LaravelProvider
                     $options = [];
                 }
 
-                $this->callSilent($command, $options);
+                $this->call($command, $options);
             });
         };
     }
