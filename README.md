@@ -58,8 +58,8 @@ $ php artisan vendor:publish
 ```
 
 ## Usage
-After publishing the configuration file, you can define your shortcuts in `config/shortcuts.php`. After
-that, creating your own artisan shortcuts is fairly straight forward. Take a look at the following
+After publishing the configuration file, you can define your shortcuts in `config/shortcuts.php`. Knowing
+that, creating your own artisan shortcuts is fairly straightforward. Take a look at the following
 configuration:
 
 ```php
@@ -88,7 +88,7 @@ return [
 ];
 ```
 
-Instead of using the FQCN for the command classes, you can also use the command name:
+Instead of using the FQCN for the command classes, you can also use the command names:
 
 ```php
 return [
