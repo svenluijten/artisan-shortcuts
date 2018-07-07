@@ -21,6 +21,13 @@ class ShortcutManager
         $this->app->command($name, $this->commandClosure($definition));
     }
 
+    public function addMultiple(array $shortcuts)
+    {
+        foreach ($shortcuts as $shortcut => $definition) {
+            $this->add($shortcut, $definition);
+        }
+    }
+
     protected function commandClosure(array $definition): callable
     {
         return function () use ($definition) {
