@@ -3,27 +3,23 @@
 namespace Sven\ArtisanShortcuts\Tests;
 
 use GrahamCampbell\TestBenchCore\MockeryTrait;
-use Mockery as m;
+use Illuminate\Contracts\Console\Kernel;
+use Sven\ArtisanShortcuts\ShortcutManager;
 
 class ShortcutsTest extends TestCase
 {
     use MockeryTrait;
 
     /** @test */
-    function it_calls_commands_it_is_configured_to_call()
+    public function it_registers_the_shortcut_as_a_command()
     {
-        $this->app['config']->set('shortcuts.foo', ['bar']);
+        /** @var \Illuminate\Contracts\Console\Kernel $artisan */
+        $artisan = $this->app->get(Kernel::class);
 
-        $mock = m::mock(\Illuminate\Foundation\Console\Kernel::class)
-            ->makePartial()
-            ->shouldReceive('call')
-            ->with('bar', [])
-            ->getMock();
+        $manager = new ShortcutManager($artisan);
 
-        $this->app->instance(\Illuminate\Contracts\Console\Kernel::class, function () use ($mock) {
-            return $mock;
-        });
+        $manager->add('clear', ['cache:clear', 'view:clear']);
 
-        $this->app->get(\Illuminate\Contracts\Console\Kernel::class)->call('foo');
+        $this->assertArrayHasKey('clear', $artisan->all());
     }
 }

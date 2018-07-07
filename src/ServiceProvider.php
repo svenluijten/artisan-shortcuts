@@ -2,43 +2,36 @@
 
 namespace Sven\ArtisanShortcuts;
 
-use Closure;
 use Illuminate\Contracts\Console\Kernel;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider as LaravelProvider;
 
 class ServiceProvider extends LaravelProvider
 {
+    protected $defer = true;
+
     public function boot(): void
     {
         $this->publishes([
             __DIR__.'/../config/shortcuts.php' => config_path('shortcuts.php'),
         ], 'config');
 
+        /** @var \Sven\ArtisanShortcuts\ShortcutManager $manager */
+        $manager = $this->app->get('shortcuts.manager');
+
         $shortcuts = collect(config('shortcuts', []));
 
-        $shortcuts->each(function (array $definition, string $shortcut) {
-            $this->app->get(Kernel::class)->command(
-                $shortcut, $this->commandClosure($definition)
-            );
-        });
+        foreach ($shortcuts as $shortcut => $definition) {
+            $manager->add($shortcut, $definition);
+        }
     }
 
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/shortcuts.php', 'shortcuts');
-    }
 
-    protected function commandClosure(array $definition): Closure
-    {
-        return function () use ($definition) {
-            collect($definition)->each(function ($options, $command) {
-                if (! is_array($options)) {
-                    $command = $options;
-                    $options = [];
-                }
-
-                $this->call($command, $options);
-            });
-        };
+        $this->app->bind('shortcuts.manager', function (Application $app) {
+            return new ShortcutManager($app->get(Kernel::class));
+        });
     }
 }
