@@ -35,7 +35,6 @@
         }
     },
     "require-dev": {
-        "graham-campbell/testbench": "^5.0",
-        "mockery/mockery": "^1.1"
+        "graham-campbell/testbench": "^5.0"
     }
 }
