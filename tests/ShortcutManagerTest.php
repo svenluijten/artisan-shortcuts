@@ -8,7 +8,7 @@ use Sven\ArtisanShortcuts\ShortcutManager;
 class ShortcutManagerTest extends TestCase
 {
     /** @test */
-    public function it_registers_the_shortcut_as_a_command()
+    public function it_registers_a_shortcut()
     {
         /** @var \Illuminate\Contracts\Console\Kernel $artisan */
         $artisan = $this->app->get(Kernel::class);
