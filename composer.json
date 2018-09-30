@@ -35,6 +35,6 @@
         }
     },
     "require-dev": {
-        "graham-campbell/testbench": "^5.0"
+        "orchestra/testbench": "~3.0"
     }
 }
