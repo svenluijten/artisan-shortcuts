@@ -19,7 +19,7 @@ class ServiceProvider extends LaravelProvider
         /** @var \Sven\ArtisanShortcuts\ShortcutManager $manager */
         $manager = $this->app->get('shortcuts.manager');
 
-        $manager->addMultiple(config('shortcuts', []));
+        $manager->addMultiple($this->app['config']->get('shortcuts', []));
     }
 
     public function register(): void

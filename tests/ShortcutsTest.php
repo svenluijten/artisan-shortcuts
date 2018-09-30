@@ -4,6 +4,7 @@ namespace Sven\ArtisanShortcuts\Tests;
 
 use Illuminate\Cache\Console\ClearCommand;
 use Illuminate\Contracts\Console\Kernel;
+use Sven\ArtisanShortcuts\ServiceProvider;
 
 class ShortcutsTest extends TestCase
 {
@@ -16,6 +17,7 @@ class ShortcutsTest extends TestCase
     {
         parent::setUp();
 
+        $this->app->register(ServiceProvider::class);
         $this->artisan = $this->app->get(Kernel::class);
     }
 
@@ -24,11 +26,9 @@ class ShortcutsTest extends TestCase
      */
     protected function getEnvironmentSetUp($app)
     {
-        parent::getEnvironmentSetUp($app);
-
-        $app['config']->set('shortcuts.first', ['cache:clear', 'view:clear']);
-        $app['config']->set('shortcuts.second', ['key:generate' => ['--show' => true], 'view:clear']);
-        $app['config']->set('shortcuts.third', [ClearCommand::class, 'view:clear']);
+        $app->config->set('shortcuts.first', ['cache:clear', 'view:clear']);
+        $app->config->set('shortcuts.second', ['key:generate' => ['--show' => true], 'view:clear']);
+        $app->config->set('shortcuts.third', [ClearCommand::class, 'view:clear']);
     }
 
     /** @test */
@@ -44,7 +44,7 @@ class ShortcutsTest extends TestCase
 
         $output = $this->artisan->output();
 
-        $this->assertContains('Cache cleared successfully.', $output);
+        $this->assertContains('cleared', $output);
         $this->assertContains('Compiled views cleared', $output);
     }
 

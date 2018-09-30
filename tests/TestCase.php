@@ -2,20 +2,18 @@
 
 namespace Sven\ArtisanShortcuts\Tests;
 
-use GrahamCampbell\TestBench\AbstractPackageTestCase;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use Sven\ArtisanShortcuts\ServiceProvider;
 
-abstract class TestCase extends AbstractPackageTestCase
+abstract class TestCase extends OrchestraTestCase
 {
     /**
-     * Get the service provider class.
-     *
      * @param \Illuminate\Contracts\Foundation\Application $app
      *
-     * @return string
+     * @return string[]
      */
-    protected function getServiceProviderClass($app)
+    protected function getPackageProviders($app)
     {
-        return ServiceProvider::class;
+        return [ServiceProvider::class];
     }
 }
