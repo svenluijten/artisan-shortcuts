@@ -8,10 +8,12 @@ use Illuminate\Support\ServiceProvider as LaravelProvider;
 
 class ServiceProvider extends LaravelProvider
 {
-    protected $defer = true;
-
     public function boot(): void
     {
+        if (!$this->app->runningInConsole()) {
+            return;
+        }
+
         $this->publishes([
             __DIR__.'/../config/shortcuts.php' => config_path('shortcuts.php'),
         ], 'config');
