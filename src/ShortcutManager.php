@@ -16,12 +16,12 @@ class ShortcutManager
         $this->app = $app;
     }
 
-    public function add(string $name, array $definition)
+    public function add(string $name, array $definition): void
     {
         $this->app->command($name, $this->commandClosure($definition));
     }
 
-    public function addMultiple(array $shortcuts)
+    public function addMultiple(array $shortcuts): void
     {
         foreach ($shortcuts as $shortcut => $definition) {
             $this->add($shortcut, $definition);
