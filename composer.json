@@ -35,6 +35,6 @@
         }
     },
     "require-dev": {
-        "orchestra/testbench": "~3.0"
+        "orchestra/testbench": "^3.5"
     }
 }
