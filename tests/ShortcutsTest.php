@@ -13,7 +13,7 @@ class ShortcutsTest extends TestCase
      */
     protected $artisan;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -44,8 +44,8 @@ class ShortcutsTest extends TestCase
 
         $output = $this->artisan->output();
 
-        $this->assertContains('cleared', $output);
-        $this->assertContains('Compiled views cleared', $output);
+        $this->assertStringContainsString('cleared', $output);
+        $this->assertStringContainsString('Compiled views cleared', $output);
     }
 
     /** @test */
@@ -57,7 +57,7 @@ class ShortcutsTest extends TestCase
 
         $output = $this->artisan->output();
 
-        $this->assertContains('Compiled views cleared!', $output);
+        $this->assertStringContainsString('Compiled views cleared!', $output);
         $this->assertRegExp('/^base64:/i', $output);
     }
 }
