@@ -104,10 +104,9 @@ return [
 Look at the table below to find out what versions of Laravel are supported on what version
 of this package:
 
-
-| Laravel                            | Artisan Shortcuts |
-|------------------------------------|-------------------|
-| `5.5.*`, `5.6.*`, `5.7.*`, `5.8.*` | `^1.0`            |
+| Laravel       | Artisan Shortcuts |
+|---------------|-------------------|
+| `5.5` - `6.0` | `^1.0`            |
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
