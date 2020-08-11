@@ -5,7 +5,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Software License][ico-license]](LICENSE.md)
-[![Build Status][ico-circleci]][link-circleci]
+[![Build Status][ico-tests]][link-tests]
 [![StyleCI][ico-styleci]][link-styleci]
 
 Have you ever executed 2 or 3 artisan commands _over_, and _over_, and _over_ in
@@ -120,10 +120,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/artisan-shortcuts.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/artisan-shortcuts.svg?style=flat-square
-[ico-circleci]: https://img.shields.io/circleci/project/github/svenluijten/artisan-shortcuts.svg?style=flat-square
+[ico-tests]: https://github.com/svenluijten/artisan-shortcuts/workflows/Tests%20(PHP)/badge.svg
 [ico-styleci]: https://styleci.io/repos/138423783/shield
 
 [link-packagist]: https://packagist.org/packages/sven/artisan-shortcuts
 [link-downloads]: https://packagist.org/packages/sven/artisan-shortcuts
-[link-circleci]: https://circleci.com/gh/svenluijten/artisan-shortcuts
+[link-tests]: https://github.com/svenluijten/artisan-shortcuts/actions?query=workflow%3ATests%20(PHP)
 [link-styleci]: https://styleci.io/repos/138423783
