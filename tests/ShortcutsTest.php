@@ -58,6 +58,6 @@ class ShortcutsTest extends TestCase
         $output = $this->artisan->output();
 
         $this->assertStringContainsString('Compiled views cleared!', $output);
-        $this->assertRegExp('/^base64:/i', $output);
+        $this->assertMatchesRegularExpression('/^base64:/i', $output);
     }
 }
