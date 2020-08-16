@@ -32,7 +32,7 @@ class ShortcutManager
     {
         return function () use ($definition) {
             collect($definition)->each(function ($options, $command) {
-                if (! \is_array($options)) {
+                if (!\is_array($options)) {
                     $command = $options;
                     $options = [];
                 }
