@@ -8,7 +8,7 @@ jobs:
         strategy:
             matrix:
                 os: ['ubuntu-latest', 'windows-latest']
-                php: [7.3, 7.4]
+                php: [7.3, 7.4, 8.0]
                 composer_flags: ['--prefer-lowest', '--prefer-stable']
         steps:
             - uses: actions/checkout@v2
