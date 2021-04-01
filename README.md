@@ -106,7 +106,7 @@ of this package:
 
 | Laravel       | Artisan Shortcuts |
 |---------------|-------------------|
-| `5.5` - `6.0` | `^1.0`            |
+| `5.5` - `8.x` | `^1.0`            |
 
 ## Contributing
 All contributions (pull requests, issues and feature requests) are
