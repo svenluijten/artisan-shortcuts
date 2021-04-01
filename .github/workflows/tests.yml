@@ -10,21 +10,21 @@ jobs:
         os: [ 'ubuntu-latest', 'windows-latest' ]
         php: [ 8.0 ]
         dependency-version: [ 'highest', 'lowest' ]
-      steps:
-        - uses: actions/checkout@v2
+    steps:
+      - uses: actions/checkout@v2
 
-        - name: Configure PHP
-          uses: shivammathur/setup-php@v2
-          with:
-            php-version: ${{ matrix.php }}
-            extensions: mbstring
-            coverage: none
+      - name: Configure PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php }}
+          extensions: mbstring
+          coverage: none
 
-        - name: Install Composer dependencies
-          uses: ramsey/composer-install@v1
-          with:
-            dependency-versions: ${{ matrix.dependency-version }}
-            composer-options: "--no-suggest --prefer-dist"
+      - name: Install Composer dependencies
+        uses: ramsey/composer-install@v1
+        with:
+          dependency-versions: ${{ matrix.dependency-version }}
+          composer-options: "--no-suggest --prefer-dist"
 
-        - name: Execute tests
-          run: vendor/bin/phpunit
+      - name: Execute tests
+        run: vendor/bin/phpunit
