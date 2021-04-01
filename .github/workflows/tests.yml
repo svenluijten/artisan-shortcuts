@@ -1,27 +1,30 @@
 name: Tests (PHP)
-on: [push, pull_request]
+on: [ push, pull_request ]
 
 jobs:
-    phpunit:
-        name: PHP ${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.composer_flags }})
-        runs-on: ${{ matrix.os }}
-        strategy:
-            matrix:
-                os: ['ubuntu-latest', 'windows-latest']
-                php: [7.3, 7.4, 8.0]
-                composer_flags: ['--prefer-lowest', '--prefer-stable']
-        steps:
-            - uses: actions/checkout@v2
+  phpunit:
+    name: PHP ${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.composer_flags }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ 'ubuntu-latest', 'windows-latest' ]
+        php: [ 7.3, 7.4, 8.0 ]
+        dependency-version: [ 'highest', 'lowest' ]
+      steps:
+        - uses: actions/checkout@v2
 
-            - name: Configure PHP
-              uses: shivammathur/setup-php@v2
-              with:
-                  php-version: ${{ matrix.php }}
-                  extensions: mbstring
-                  coverage: none
+        - name: Configure PHP
+          uses: shivammathur/setup-php@v2
+          with:
+            php-version: ${{ matrix.php }}
+            extensions: mbstring
+            coverage: none
 
-            - name: Install Composer dependencies
-              run: composer update --no-interaction --no-ansi --no-suggest --prefer-dist ${{ matrix.composer_flags }}
+        - name: Install Composer dependencies
+          uses: ramsey/composer-install@v1
+          with:
+            dependency-versions: ${{ matrix.dependency-version }}
+            composer-options: "--no-suggest --prefer-dist"
 
-            - name: Execute tests
-              run: vendor/bin/phpunit
+        - name: Execute tests
+          run: vendor/bin/phpunit
