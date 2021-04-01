@@ -3,12 +3,12 @@ on: [ push, pull_request ]
 
 jobs:
   phpunit:
-    name: PHP ${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.composer_flags }})
+    name: PHP ${{ matrix.php }} on ${{ matrix.os }} (${{ matrix.dependency-version }})
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ 'ubuntu-latest', 'windows-latest' ]
-        php: [ 7.3, 7.4, 8.0 ]
+        php: [ 8.0 ]
         dependency-version: [ 'highest', 'lowest' ]
       steps:
         - uses: actions/checkout@v2
