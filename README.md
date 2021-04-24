@@ -110,10 +110,10 @@ though. See the [contributors page](../../graphs/contributors) for all contribut
 [ico-version]: https://img.shields.io/packagist/v/sven/artisan-shortcuts.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-green.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/sven/artisan-shortcuts.svg?style=flat-square
-[ico-tests]: https://github.com/svenluijten/artisan-shortcuts/workflows/Tests%20(PHP)/badge.svg
+[ico-tests]: https://img.shields.io/github/workflow/status/svenluijten/artisan-shortcuts/Tests?style=flat-square
 [ico-styleci]: https://styleci.io/repos/138423783/shield
 
 [link-packagist]: https://packagist.org/packages/sven/artisan-shortcuts
 [link-downloads]: https://packagist.org/packages/sven/artisan-shortcuts
-[link-tests]: https://github.com/svenluijten/artisan-shortcuts/actions?query=workflow%3ATests%20(PHP)
+[link-tests]: https://github.com/svenluijten/artisan-shortcuts/actions?query=workflow%3ATests
 [link-styleci]: https://styleci.io/repos/138423783
