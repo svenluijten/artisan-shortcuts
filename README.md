@@ -13,16 +13,6 @@ your Laravel projects? Me too! That's what prompted this package. With it, you c
 define "shortcuts" to bundle up those commonly used commands into short, memorable
 names (or long, convoluted ones, that's up to you!).
 
-## Index
-- [Installation](#installation)
-  - [Downloading](#downloading)
-  - [Registering the service provider](#registering-the-service-provider)
-  - [Publishing the configuration file](#publishing-the-configuration-file)
-- [Usage](#usage)
-- [Supported versions](#supported-versions)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Installation
 You'll have to follow a couple of simple steps to install this package.
 
