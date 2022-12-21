@@ -22,7 +22,7 @@ class ShortcutsTest extends TestCase
     }
 
     /**
-     * @param \Illuminate\Contracts\Foundation\Application $app
+     * @param  \Illuminate\Contracts\Foundation\Application  $app
      */
     protected function getEnvironmentSetUp($app)
     {
