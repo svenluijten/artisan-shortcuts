@@ -8,8 +8,7 @@ use Sven\ArtisanShortcuts\ServiceProvider;
 abstract class TestCase extends OrchestraTestCase
 {
     /**
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
+     * @param  \Illuminate\Contracts\Foundation\Application  $app
      * @return string[]
      */
     protected function getPackageProviders($app)
